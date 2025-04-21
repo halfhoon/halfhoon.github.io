@@ -10,106 +10,174 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --primary: #0055A5;
-      --accent: #0177E7;
-      --bg-light: #F9F9F9;
+      --primary: #2A4E6E; /* Deeper Blue */
+      --accent: #4A90E2; /* Brighter Blue for accents */
+      --bg-light: #F7F9FC; /* Lighter, slightly blueish gray */
       --bg-white: #FFFFFF;
-      --text-dark: #333333;
-      --text-light: #FFFFFF;
-      --card-shadow: rgba(0, 0, 0, 0.1);
+      --text-dark: #333A40; /* Darker text */
+      --text-light: #F0F4F8;
+      --card-shadow: rgba(42, 78, 110, 0.1);
+      --card-hover-shadow: rgba(42, 78, 110, 0.15);
+      --border-light: #E0E6ED;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      font-family: 'Inter', sans-serif;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       background-color: var(--bg-light);
       color: var(--text-dark);
-      line-height: 1.6;
+      line-height: 1.7;
+      font-size: 16px; /* Slightly larger base font size */
     }
-    a { color: var(--accent); text-decoration: none; }
-    a:hover { text-decoration: underline; }
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      transition: color 0.2s ease-in-out;
+    }
+    a:hover {
+      color: var(--primary);
+      text-decoration: none; /* Remove underline on hover for cleaner look */
+    }
     nav {
       background: var(--bg-white);
-      box-shadow: 0 2px 4px var(--card-shadow);
+      box-shadow: 0 1px 3px var(--card-shadow);
       position: sticky;
       top: 0;
       z-index: 100;
+      border-bottom: 1px solid var(--border-light);
     }
     nav .nav-container {
-      max-width: 960px;
+      max-width: 1024px; /* Slightly wider container */
       margin: auto;
-      padding: 10px 20px;
+      padding: 12px 24px;
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
-    nav ul { display: flex; gap: 20px; list-style: none; }
-    nav li { font-weight: 600; }
+    nav ul { display: flex; gap: 25px; list-style: none; }
+    nav li { font-weight: 600; font-size: 0.95rem; }
+    nav a {
+        color: var(--text-dark);
+        padding-bottom: 4px; /* Space for border */
+        border-bottom: 2px solid transparent; /* Underline effect on hover */
+        transition: border-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    }
+    nav a:hover {
+        color: var(--primary);
+        border-bottom-color: var(--accent);
+    }
     header {
-      background: var(--primary);
+      background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%); /* Gradient background */
       color: var(--text-light);
-      padding: 60px 20px;
+      padding: 80px 24px;
       text-align: center;
     }
     header .hero {
-      max-width: 680px;
+      max-width: 720px;
       margin: auto;
     }
     header img {
-      width: 160px;
-      height: 160px;
+      width: 180px; /* Slightly larger photo */
+      height: 180px;
       border-radius: 50%;
       object-fit: cover;
-      border: 4px solid var(--accent);
+      border: 5px solid rgba(255, 255, 255, 0.8); /* White border */
       display: block;
-      margin: 0 auto 20px;
+      margin: 0 auto 25px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     }
-    header h1 { font-size: 2.5rem; margin-bottom: 10px; }
-    header p { font-size: 1rem; margin-bottom: 5px; }
-    main { max-width: 960px; margin: 40px auto; padding: 0 20px; }
-    section { margin-bottom: 40px; }
+    header h1 { font-size: 3rem; margin-bottom: 15px; font-weight: 700; }
+    header p { font-size: 1.1rem; margin-bottom: 8px; opacity: 0.9; }
+
+    main { max-width: 1024px; margin: 50px auto; padding: 0 24px; }
+    section { margin-bottom: 50px; }
     .card {
       background: var(--bg-white);
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px var(--card-shadow);
+      padding: 30px; /* More padding */
+      border-radius: 10px; /* More rounded corners */
+      box-shadow: 0 5px 15px var(--card-shadow);
+      transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+      border: 1px solid var(--border-light);
+    }
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px var(--card-hover-shadow);
     }
     h2 {
-      font-size: 1.75rem;
-      margin-bottom: 20px;
+      font-size: 2rem; /* Larger section titles */
+      font-weight: 700;
+      margin-bottom: 25px;
       position: relative;
+      color: var(--primary);
     }
     h2::after {
       content: '';
       display: block;
-      width: 50px;
-      height: 3px;
+      width: 60px;
+      height: 4px;
       background: var(--accent);
-      margin-top: 8px;
+      margin-top: 10px;
       border-radius: 2px;
     }
     .grid-2 {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
     }
-    ul { list-style: none; }
-    ul li { margin-bottom: 12px; }
+    ul { list-style: none; padding-left: 0; /* Remove default padding */ }
+    ul li { margin-bottom: 15px; }
+    /* Style for publication list */
+    #publications ul li {
+        padding-left: 1.2em; /* Indentation */
+        position: relative;
+        margin-bottom: 18px; /* More space between publications */
+    }
+    #publications ul li::before {
+        content: '\2022'; /* Bullet point */
+        color: var(--accent);
+        font-weight: bold;
+        display: inline-block;
+        width: 1em;
+        margin-left: -1.2em; /* Align with text */
+        position: absolute;
+        left: 0;
+    }
+    #publications em {
+        font-style: normal; /* Italic is often used for titles, keep it */
+        /* background-color: #eef; */ /* Optional: Subtle highlight for titles */
+    }
     .edu-item {
-      margin-bottom: 20px;
+      margin-bottom: 25px;
+      padding-left: 10px;
+      border-left: 3px solid var(--accent);
+    }
+    .edu-item:last-child {
+        margin-bottom: 0;
+    }
+    .edu-item strong {
+        font-size: 1.1rem;
+        font-weight: 600;
     }
     .edu-item .degree {
       font-style: italic;
-      margin: 4px 0;
+      margin: 5px 0;
+      color: #555;
     }
     .edu-dates {
-      color: var(--accent);
+      color: var(--primary);
       font-size: 0.9rem;
+      font-weight: 600;
+    }
+    /* Contact section specific styles */
+    #contact p {
+        margin-bottom: 10px;
     }
     footer {
       text-align: center;
-      padding: 20px;
+      padding: 30px 24px;
+      margin-top: 50px;
       font-size: 0.9rem;
       color: #777;
+      border-top: 1px solid var(--border-light);
     }
   </style>
 </head>
@@ -130,7 +198,7 @@
 
   <header>
     <div class="hero">
-      <img src="photo.jpg" alt="Photo of Jaehoon Choi">
+      <img src="photo.jpeg" alt="Photo of Jaehoon Choi">
       <h1>Jaehoon Choi</h1>
       <p><strong>Ph.D. Student</strong> in the Interdisciplinary Program in Artificial Intelligence</p>
       <p>Graduate School of AI, Seoul National University (HCC Lab)</p>
@@ -163,12 +231,12 @@
       <h2>Education</h2>
       <div class="edu-item">
         <strong>Seoul National University</strong>
-        <div class="degree">Interdisciplinary Program in Artificial Intelligence (Integrated Master’s &amp; Ph.D.)</div>
+        <div class="degree">Interdisciplinary Program in Artificial Intelligence (Integrated Master's &amp; Ph.D.)</div>
         <div class="edu-dates">Mar 2025 – Present</div>
       </div>
       <div class="edu-item">
         <strong>Kyung Hee University</strong>
-        <div class="degree">Master’s in Business Administration</div>
+        <div class="degree">Master's in Business Administration</div>
         <div class="edu-dates">Mar 2021 – Aug 2023</div>
       </div>
     </section>
@@ -183,19 +251,19 @@
     <section id="publications" class="card">
       <h2>Publications</h2>
       <ul>
-        <li>“I feel you, but...”: Exploring the Boundaries of Pragmatic Markers in Real-time Voice-based Conversational Agents — Minjeong Shin*, <strong><em>Choi, J.*</em></strong>, Hyungwoo Song, Junghwan Kim, Bongwon Suh. <em>Extended Abstracts of the 2025 CHI Conference on Human Factors in Computing Systems</em> (CHI EA '25), accepted. *contributed equally.</li>
-        <li><a href="https://doi.org/10.1145/3708557.3716366"><em>AltAuthor: A Context-Aware Alt Text Authoring Tool with Image Classification and LMM-Powered Accessibility Compliance</em></a> — Hyungwoo Song, Minjeong Shin, Yeonjoon Kim, Kyochul Jang, <strong><em>Choi, J.</em></strong>, Hyunggu Jung, Bongwon Suh. <em>The ACM Conference on Intelligent User Interfaces</em> (IUI '25).</li>
-        <li><em>Design Guidelines for Enhancing Korean Voice Assistants with Discourse Markers Using LLMs</em> — Minjeong Shin*, <strong><em>Choi, J.*</em></strong>, Junghwan Kim, Hyungwoo Song, Bongwon Suh. <em>Proceedings of HCI Korea 2025</em> (HCIK '25). *contributed equally.</li>
-        <li><em>Proposal of a Personalized Multimedia E-book System Using Generative AI</em> — Hyeonseok Jeon*, Yeonjoon Kim*, Kyochul Jang, Minjeong Shin, <strong><em>Choi, J.</em></strong>, Bongwon Suh. <em>Proceedings of HCI Korea 2025</em> (HCIK '25).</li>
-        <li><em>Comparing Corporate and Public ESG Perceptions Using Text Mining and ChatGPT Analysis: Based on Sustainability Reports and Social Media</em> — <strong><em>Jae‑Hoon Choi**,</em></strong> Sung‑Byung Yang***, Sang‑Hyeak Yoon****. <em>Journal of Intelligence and Information Systems</em> (JIIS), 2023.</li>
+        <li>"I feel you, but...": Exploring the Boundaries of Pragmatic Markers in Real-time Voice-based Conversational Agents — Minjeong Shin*, <strong><em>Jaehoon Choi*</em></strong>, Hyungwoo Song, Junghwan Kim, Bongwon Suh. <em>Extended Abstracts of the 2025 CHI Conference on Human Factors in Computing Systems</em> (CHI EA '25), accepted. *contributed equally.</li>
+        <li><a href="https://doi.org/10.1145/3708557.3716366"><em>AltAuthor: A Context-Aware Alt Text Authoring Tool with Image Classification and LMM-Powered Accessibility Compliance</em></a> — Hyungwoo Song, Minjeong Shin, Yeonjoon Kim, Kyochul Jang, <strong><em>Jaehoon Choi</em></strong>, Hyunggu Jung, Bongwon Suh. <em>The ACM Conference on Intelligent User Interfaces</em> (IUI '25).</li>
+        <li><em>Design Guidelines for Enhancing Korean Voice Assistants with Discourse Markers Using LLMs</em> — Minjeong Shin*, <strong><em>Jaehoon Choi*</em></strong>, Junghwan Kim, Hyungwoo Song, Bongwon Suh. <em>Proceedings of HCI Korea 2025</em> (HCIK '25). *contributed equally.</li>
+        <li><em>Proposal of a Personalized Multimedia E-book System Using Generative AI</em> — Hyeonseok Jeon*, Yeonjoon Kim*, Kyochul Jang, Minjeong Shin, <strong><em>Jaehoon Choi</em></strong>, Bongwon Suh. <em>Proceedings of HCI Korea 2025</em> (HCIK '25).</li>
+        <li><em>Comparing Corporate and Public ESG Perceptions Using Text Mining and ChatGPT Analysis: Based on Sustainability Reports and Social Media</em> — <strong><em>Jaehoon Choi**,</em></strong> Sung‑Byung Yang***, Sang‑Hyeak Yoon****. <em>Journal of Intelligence and Information Systems</em> (JIIS), 2023.</li>
       </ul>
     </section>
 
-    <section id="contact" class="card"> class="card">
+    <section id="contact" class="card">
       <h2>Contact</h2>
       <p>Email: <a href="mailto:hoon95@snu.ac.kr">hoon95@snu.ac.kr</a></p>
       <p>LinkedIn: <a href="https://www.linkedin.com/in/jaehoon-choi-9299b7343/">linkedin.com/in/jaehoon-choi-9299b7343</a></p>
-      <p>GitHub: <a href="https://github.com/halfhoon">github.com/halfhoon/a></p>
+      <p>GitHub: <a href="https://github.com/halfhoon">github.com/halfhoon</a></p>
     </section>
   </main>
 
