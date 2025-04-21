@@ -136,9 +136,10 @@
     ul li { margin-bottom: 12px; /* Reduced list item margin */ }
     /* Style for publication list */
     #publications ul li {
-        padding-left: 1.2em; /* Indentation */
+        padding-left: 1.5em; /* Indentation slightly increased */
         position: relative;
         margin-bottom: 15px; /* Reduced space between publications */
+        line-height: 1.6; /* Adjust line-height for readability */
     }
     #publications ul li::before {
         content: '\2022'; /* Bullet point */
@@ -146,13 +147,9 @@
         font-weight: bold;
         display: inline-block;
         width: 1em;
-        margin-left: -1.2em; /* Align with text */
+        margin-left: -1em; /* Adjusted negative margin */
         position: absolute;
-        left: 0;
-    }
-    #publications em {
-        font-style: normal; /* Italic is often used for titles, keep it */
-        /* background-color: #eef; */ /* Optional: Subtle highlight for titles */
+        left: 0.25em; /* Move bullet slightly right */
     }
     .edu-item {
       margin-bottom: 20px;
