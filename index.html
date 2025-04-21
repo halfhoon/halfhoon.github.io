@@ -25,8 +25,8 @@
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       background-color: var(--bg-light);
       color: var(--text-dark);
-      line-height: 1.7;
-      font-size: 16px; /* Slightly larger base font size */
+      line-height: 1.65; /* Slightly adjusted line height */
+      font-size: 15px; /* Reduced base font size */
     }
     a {
       color: var(--accent);
@@ -50,11 +50,17 @@
       margin: auto;
       padding: 12px 24px;
       display: flex;
-      justify-content: space-between;
+      justify-content: space-between; /* Keep space-between */
       align-items: center;
     }
-    nav ul { display: flex; gap: 25px; list-style: none; }
-    nav li { font-weight: 600; font-size: 0.95rem; }
+    nav ul {
+        display: flex;
+        gap: 25px;
+        list-style: none;
+        margin: 0 auto; /* Attempt to center the ul */
+        padding-left: 0; /* Ensure no default padding interferes */
+    }
+    nav li { font-weight: 600; font-size: 0.9rem; /* Reduced nav font size */ }
     nav a {
         color: var(--text-dark);
         padding-bottom: 4px; /* Space for border */
@@ -68,7 +74,7 @@
     header {
       background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%); /* Gradient background */
       color: var(--text-light);
-      padding: 80px 24px;
+      padding: 70px 24px; /* Slightly reduced padding */
       text-align: center;
     }
     header .hero {
@@ -76,60 +82,60 @@
       margin: auto;
     }
     header img {
-      width: 180px; /* Slightly larger photo */
-      height: 180px;
+      width: 170px; /* Slightly smaller photo */
+      height: 170px;
       border-radius: 50%;
       object-fit: cover;
       border: 5px solid rgba(255, 255, 255, 0.8); /* White border */
       display: block;
-      margin: 0 auto 25px;
+      margin: 0 auto 20px;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     }
-    header h1 { font-size: 3rem; margin-bottom: 15px; font-weight: 700; }
-    header p { font-size: 1.1rem; margin-bottom: 8px; opacity: 0.9; }
+    header h1 { font-size: 2.7rem; margin-bottom: 12px; font-weight: 700; } /* Reduced h1 size */
+    header p { font-size: 1rem; margin-bottom: 6px; opacity: 0.9; } /* Reduced header p size */
 
-    main { max-width: 1024px; margin: 50px auto; padding: 0 24px; }
-    section { margin-bottom: 50px; }
+    main { max-width: 1024px; margin: 45px auto; padding: 0 24px; }
+    section { margin-bottom: 45px; }
     .card {
       background: var(--bg-white);
-      padding: 30px; /* More padding */
+      padding: 25px; /* Slightly reduced padding */
       border-radius: 10px; /* More rounded corners */
       box-shadow: 0 5px 15px var(--card-shadow);
       transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
       border: 1px solid var(--border-light);
     }
     .card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 20px var(--card-hover-shadow);
+        transform: translateY(-4px); /* Slightly reduced hover effect */
+        box-shadow: 0 7px 18px var(--card-hover-shadow);
     }
     h2 {
-      font-size: 2rem; /* Larger section titles */
+      font-size: 1.8rem; /* Reduced section title size */
       font-weight: 700;
-      margin-bottom: 25px;
+      margin-bottom: 20px;
       position: relative;
       color: var(--primary);
     }
     h2::after {
       content: '';
       display: block;
-      width: 60px;
-      height: 4px;
+      width: 50px; /* Adjusted underline */
+      height: 3px;
       background: var(--accent);
-      margin-top: 10px;
+      margin-top: 8px;
       border-radius: 2px;
     }
     .grid-2 {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 25px;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); /* Adjusted minmax */
+      gap: 20px;
     }
     ul { list-style: none; padding-left: 0; /* Remove default padding */ }
-    ul li { margin-bottom: 15px; }
+    ul li { margin-bottom: 12px; /* Reduced list item margin */ }
     /* Style for publication list */
     #publications ul li {
         padding-left: 1.2em; /* Indentation */
         position: relative;
-        margin-bottom: 18px; /* More space between publications */
+        margin-bottom: 15px; /* Reduced space between publications */
     }
     #publications ul li::before {
         content: '\2022'; /* Bullet point */
@@ -146,7 +152,7 @@
         /* background-color: #eef; */ /* Optional: Subtle highlight for titles */
     }
     .edu-item {
-      margin-bottom: 25px;
+      margin-bottom: 20px;
       padding-left: 10px;
       border-left: 3px solid var(--accent);
     }
@@ -154,28 +160,28 @@
         margin-bottom: 0;
     }
     .edu-item strong {
-        font-size: 1.1rem;
+        font-size: 1.05rem; /* Slightly reduced */
         font-weight: 600;
     }
     .edu-item .degree {
       font-style: italic;
-      margin: 5px 0;
+      margin: 4px 0;
       color: #555;
     }
     .edu-dates {
       color: var(--primary);
-      font-size: 0.9rem;
+      font-size: 0.85rem; /* Slightly reduced */
       font-weight: 600;
     }
     /* Contact section specific styles */
     #contact p {
-        margin-bottom: 10px;
+        margin-bottom: 8px;
     }
     footer {
       text-align: center;
-      padding: 30px 24px;
-      margin-top: 50px;
-      font-size: 0.9rem;
+      padding: 25px 24px;
+      margin-top: 40px;
+      font-size: 0.85rem;
       color: #777;
       border-top: 1px solid var(--border-light);
     }
@@ -209,7 +215,10 @@
   <main>
     <section id="about" class="card">
       <h2>About Me</h2>
-      <p>I am a Ph.D. student in the Interdisciplinary Program in Artificial Intelligence at the Graduate School of AI, Seoul National University (HCC Lab). My research focuses on human–computer interaction and human–AI interaction, emphasizing accessibility enhancements and conversational agent design to create inclusive, user-centered experiences.</p>
+      <p>I am a Ph.D. student in the Interdisciplinary Program in Artificial Intelligence at Seoul National University's Graduate School of AI, working in the <a href="https://hcclab.notion.site/Human-Centered-Computing-Lab-HCCL-3fc9cecbb5a642d1ada697c83430dc47" target="_blank" rel="noopener noreferrer">Human-Centered Computing (HCC) Lab</a>.</p>
+      <p>My research lies at the intersection of human–computer interaction (HCI) and human–AI interaction, with a focus on designing conversational agents and accessible AI systems that foster inclusive, user-centered experiences.</p>
+      <p>In particular, I am interested in enhancing the naturalness of dialogue through elements such as backchanneling, turn-taking, and pragmatic markers, especially in real-time, voice-based interactions.</p>
+      <p>I'm always open to interdisciplinary collaboration and welcome opportunities to work with researchers, designers, and developers who are passionate about building more intuitive and empathetic AI experiences.</p>
     </section>
 
     <section id="research-interests" class="card">
@@ -255,7 +264,7 @@
         <li><a href="https://doi.org/10.1145/3708557.3716366"><em>AltAuthor: A Context-Aware Alt Text Authoring Tool with Image Classification and LMM-Powered Accessibility Compliance</em></a> — Hyungwoo Song, Minjeong Shin, Yeonjoon Kim, Kyochul Jang, <strong><em>Jaehoon Choi</em></strong>, Hyunggu Jung, Bongwon Suh. <em>The ACM Conference on Intelligent User Interfaces</em> (IUI '25).</li>
         <li><em>Design Guidelines for Enhancing Korean Voice Assistants with Discourse Markers Using LLMs</em> — Minjeong Shin*, <strong><em>Jaehoon Choi*</em></strong>, Junghwan Kim, Hyungwoo Song, Bongwon Suh. <em>Proceedings of HCI Korea 2025</em> (HCIK '25). *contributed equally.</li>
         <li><em>Proposal of a Personalized Multimedia E-book System Using Generative AI</em> — Hyeonseok Jeon*, Yeonjoon Kim*, Kyochul Jang, Minjeong Shin, <strong><em>Jaehoon Choi</em></strong>, Bongwon Suh. <em>Proceedings of HCI Korea 2025</em> (HCIK '25).</li>
-        <li><em>Comparing Corporate and Public ESG Perceptions Using Text Mining and ChatGPT Analysis: Based on Sustainability Reports and Social Media</em> — <strong><em>Jaehoon Choi**,</em></strong> Sung‑Byung Yang***, Sang‑Hyeak Yoon****. <em>Journal of Intelligence and Information Systems</em> (JIIS), 2023.</li>
+        <li><em>Comparing Corporate and Public ESG Perceptions Using Text Mining and ChatGPT Analysis: Based on Sustainability Reports and Social Media</em> — <strong><em>Jaehoon Choi,</em></strong> Sung‑Byung Yang, Sang‑Hyeak Yoon. <em>Journal of Intelligence and Information Systems</em> (JIIS), 2023.</li>
       </ul>
     </section>
 
