@@ -52,7 +52,7 @@
       border-bottom: 1px solid var(--border-light);
     }
     nav .nav-container {
-      max-width: 1024px; /* Slightly wider container */
+      max-width: 980px;
       margin: auto;
       padding: 12px 24px;
       display: flex;
@@ -115,26 +115,56 @@
       letter-spacing: 0.3px;
     }
 
-    main { max-width: 1024px; margin: 45px auto; padding: 0 24px; }
-    section { margin-bottom: 45px; }
-    #about p {
-        text-align: left;
-        max-width: 72ch;
-        margin-bottom: 14px;
+    main { max-width: 980px; margin: 42px auto; padding: 0 24px; }
+    section { margin-bottom: 36px; }
+    #about .about-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1.9fr) minmax(240px, 0.95fr);
+        gap: 32px;
+        align-items: start;
     }
-    #about p:last-child {
+    #about .about-copy p {
+        text-align: left;
+        margin-bottom: 14px;
+        line-height: 1.8;
+    }
+    #about .about-copy p:last-child {
         margin-bottom: 0;
+    }
+    #about .about-aside {
+        background: linear-gradient(180deg, rgba(61, 122, 184, 0.06) 0%, rgba(61, 122, 184, 0.02) 100%);
+        border: 1px solid rgba(61, 122, 184, 0.12);
+        border-radius: 12px;
+        padding: 18px 18px 16px;
+    }
+    #about .aside-item + .aside-item {
+        margin-top: 14px;
+        padding-top: 14px;
+        border-top: 1px solid rgba(61, 122, 184, 0.12);
+    }
+    #about .aside-label {
+        display: block;
+        margin-bottom: 4px;
+        font-size: 0.76rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--accent);
+    }
+    #about .aside-value {
+        color: var(--text-dark);
+        line-height: 1.55;
     }
     .card {
       background: var(--bg-white);
-      padding: 32px;
-      border-radius: 12px;
-      box-shadow: var(--card-shadow);
+      padding: 30px;
+      border-radius: 14px;
+      box-shadow: 0 6px 24px rgba(30, 58, 95, 0.06);
       transition: box-shadow 0.2s ease, border-color 0.2s ease;
       border: 1px solid var(--border-light);
     }
     .card:hover {
-      box-shadow: 0 6px 24px rgba(30, 58, 95, 0.1);
+      box-shadow: 0 10px 30px rgba(30, 58, 95, 0.08);
       border-color: #D7E2EE;
     }
     h2 {
@@ -159,16 +189,6 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); /* Adjusted minmax */
       gap: 20px;
-    }
-    .section-split {
-      display: grid;
-      grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
-      gap: 20px;
-      align-items: start;
-      margin-bottom: 45px;
-    }
-    .section-split section {
-      margin-bottom: 0;
     }
     ul { list-style: none; padding-left: 0; /* Remove default padding */ }
     ul li { margin-bottom: 12px; /* Reduced list item margin */ }
@@ -283,10 +303,6 @@
       font-size: 0.85rem; /* Slightly reduced */
       font-weight: 600;
     }
-    #experience ul li {
-      margin-bottom: 0;
-      line-height: 1.6;
-    }
     /* Contact section specific styles */
     #contact .contact-links {
         display: flex;
@@ -298,8 +314,8 @@
         display: inline-flex;
         align-items: center;
         gap: 10px;
-        padding: 12px 20px;
-        background: var(--bg-light);
+        padding: 11px 18px;
+        background: transparent;
         border-radius: 8px;
         color: var(--text-dark);
         text-decoration: none;
@@ -307,10 +323,10 @@
         border: 1px solid var(--border-light);
     }
     #contact .contact-item:hover {
-        background: var(--primary);
-        color: white;
-        border-color: var(--primary);
-        transform: translateY(-2px);
+        background: rgba(61, 122, 184, 0.06);
+        color: var(--primary);
+        border-color: rgba(61, 122, 184, 0.24);
+        transform: translateY(-1px);
     }
     #contact .contact-item i {
         font-size: 1.1rem;
@@ -318,7 +334,7 @@
         transition: color 0.2s ease;
     }
     #contact .contact-item:hover i {
-        color: white;
+        color: var(--primary);
     }
     footer {
       text-align: center;
@@ -361,8 +377,9 @@
       main { margin: 30px auto; padding: 0 15px; }
       section { margin-bottom: 30px; }
 
-      #about p {
-        text-align: left;
+      #about .about-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
       }
 
       .card {
@@ -377,12 +394,6 @@
         grid-template-columns: 1fr;
         gap: 15px;
       }
-      .section-split {
-        grid-template-columns: 1fr;
-        gap: 15px;
-        margin-bottom: 30px;
-      }
-
       #publications ul li {
         padding: 14px 0;
       }
@@ -423,7 +434,6 @@
         <li><a href="#about">About</a></li>
         <li><a href="#research-interests">Research</a></li>
         <li><a href="#education">Education</a></li>
-        <li><a href="#experience">Experience</a></li>
         <li><a href="#publications">Papers</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
@@ -443,9 +453,27 @@
   <main>
     <section id="about" class="card">
       <h2>About Me</h2>
-      <p>I am a Ph.D. student in the Interdisciplinary Program in Artificial Intelligence at Seoul National University's Graduate School of AI, working in the <a href="https://hcclab.notion.site/Human-Centered-Computing-Lab-HCCL-3fc9cecbb5a642d1ada697c83430dc47" target="_blank" rel="noopener noreferrer">Human-Centered Computing Lab (HCCL)</a>.</p>
-      <p>My research explores the evolving relationship between people and AI, working at the intersection of human-computer interaction (HCI) and human-AI interaction (HAI). I am interested in how AI mediates and reshapes human experiences, how people perceive and relate to AI as a social entity in their everyday lives, and how issues of bias and fairness emerge in multimodal AI systems. My current work spans AI-mediated content experiences, conversational interaction, and accessible technology.</p>
-      <p>I'm always open to interdisciplinary collaboration and welcome opportunities to work with researchers, designers, and developers who share a passion for building more human-centered AI.</p>
+      <div class="about-grid">
+        <div class="about-copy">
+          <p>I am a Ph.D. student in the Interdisciplinary Program in Artificial Intelligence at Seoul National University's Graduate School of AI, working in the <a href="https://hcclab.notion.site/Human-Centered-Computing-Lab-HCCL-3fc9cecbb5a642d1ada697c83430dc47" target="_blank" rel="noopener noreferrer">Human-Centered Computing Lab (HCCL)</a>.</p>
+          <p>My research explores the evolving relationship between people and AI, working at the intersection of human-computer interaction (HCI) and human-AI interaction (HAI). I am interested in how AI mediates and reshapes human experiences, how people perceive and relate to AI as a social entity in their everyday lives, and how issues of bias and fairness emerge in multimodal AI systems. My current work spans AI-mediated content experiences, conversational interaction, and accessible technology.</p>
+          <p>I'm always open to interdisciplinary collaboration and welcome opportunities to work with researchers, designers, and developers who share a passion for building more human-centered AI.</p>
+        </div>
+        <aside class="about-aside" aria-label="Profile summary">
+          <div class="aside-item">
+            <span class="aside-label">Current Role</span>
+            <div class="aside-value">Research Assistant, HCC Lab</div>
+          </div>
+          <div class="aside-item">
+            <span class="aside-label">Affiliation</span>
+            <div class="aside-value">Seoul National University<br>Graduate School of AI</div>
+          </div>
+          <div class="aside-item">
+            <span class="aside-label">Focus</span>
+            <div class="aside-value">HCI, HAI, multimodal AI, and AI fairness</div>
+          </div>
+        </aside>
+      </div>
     </section>
 
     <section id="research-interests" class="card">
@@ -464,28 +492,19 @@
       </div>
     </section>
 
-    <div class="section-split">
-      <section id="education" class="card">
-        <h2>Education</h2>
-        <div class="edu-item">
-          <strong>Seoul National University</strong>
-          <div class="degree">Interdisciplinary Program in Artificial Intelligence (Integrated Master's &amp; Ph.D.)</div>
-          <div class="edu-dates">Sep 2024 – Present</div>
-        </div>
-        <div class="edu-item">
-          <strong>Kyung Hee University</strong>
-          <div class="degree">Master's in Business Administration</div>
-          <div class="edu-dates">Mar 2021 – Aug 2023</div>
-        </div>
-      </section>
-
-      <section id="experience" class="card">
-        <h2>Experience</h2>
-        <ul>
-          <li><strong>Research Assistant</strong> — HCC Lab, Seoul National University (2024–Present)</li>
-        </ul>
-      </section>
-    </div>
+    <section id="education" class="card">
+      <h2>Education</h2>
+      <div class="edu-item">
+        <strong>Seoul National University</strong>
+        <div class="degree">Interdisciplinary Program in Artificial Intelligence (Integrated Master's &amp; Ph.D.)</div>
+        <div class="edu-dates">Sep 2024 – Present</div>
+      </div>
+      <div class="edu-item">
+        <strong>Kyung Hee University</strong>
+        <div class="degree">Master's in Business Administration</div>
+        <div class="edu-dates">Mar 2021 – Aug 2023</div>
+      </div>
+    </section>
 
     <section id="publications" class="card">
       <h2>Papers</h2>
