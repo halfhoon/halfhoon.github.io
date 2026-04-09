@@ -45,7 +45,7 @@
     }
     nav {
       background: var(--bg-white);
-      box-shadow: 0 1px 3px var(--card-shadow);
+      box-shadow: 0 1px 0 rgba(148, 163, 184, 0.14);
       position: sticky;
       top: 0;
       z-index: 100;
@@ -54,23 +54,36 @@
     nav .nav-container {
       max-width: 980px;
       margin: auto;
-      padding: 12px 24px;
+      padding: 16px 24px;
       display: flex;
-      justify-content: space-between; /* Keep space-between */
-      align-items: baseline; /* Align items based on text baseline */
+      justify-content: space-between;
+      align-items: center;
+    }
+    nav .nav-brand {
+      font-family: var(--font-heading);
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--primary);
+      letter-spacing: 0.2px;
+      white-space: nowrap;
     }
     nav ul {
         display: flex;
-        gap: 25px;
+        gap: 30px;
         list-style: none;
-        margin: 0 auto; /* Attempt to center the ul */
-        padding-left: 0; /* Ensure no default padding interferes */
+        margin: 0;
+        padding-left: 0;
+        align-items: center;
     }
-    nav li { font-weight: 600; font-size: 0.9rem; /* Reduced nav font size */ }
+    nav li {
+        font-weight: 500;
+        font-size: 0.98rem;
+        letter-spacing: 0.01em;
+    }
     nav a {
         color: var(--text-dark);
-        padding-bottom: 4px; /* Space for border */
-        border-bottom: 2px solid transparent; /* Underline effect on hover */
+        padding: 4px 0 5px;
+        border-bottom: 1px solid transparent;
         transition: border-color 0.2s ease-in-out, color 0.2s ease-in-out;
     }
     nav a:hover {
@@ -394,16 +407,19 @@
       }
       nav .nav-container {
         flex-direction: column;
-        align-items: center; /* Center items vertically */
-        padding: 10px 15px;
+        align-items: center;
+        padding: 12px 15px;
+      }
+      nav .nav-brand {
+        font-size: 1.1rem;
       }
       nav ul {
-        margin-top: 10px; /* Add space between name and menu */
-        gap: 15px; /* Reduce gap between menu items */
-        justify-content: center; /* Center items horizontally */
-        flex-wrap: wrap; /* Allow menu items to wrap */
+        margin-top: 12px;
+        gap: 16px;
+        justify-content: center;
+        flex-wrap: wrap;
       }
-      nav li { font-size: 0.85rem; }
+      nav li { font-size: 0.92rem; }
 
       header {
         padding: 52px 20px 58px;
@@ -471,7 +487,7 @@
 <body>
   <nav>
     <div class="nav-container">
-      <div><strong>Jaehoon Choi</strong></div>
+      <div class="nav-brand">Jaehoon Choi</div>
       <ul>
         <li><a href="#about">About</a></li>
         <li><a href="#research-interests">Research</a></li>
