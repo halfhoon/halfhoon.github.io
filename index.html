@@ -161,25 +161,29 @@
     #publications ul {
         display: flex;
         flex-direction: column;
-        gap: 16px;
+        gap: 0;
     }
     #publications ul li {
-        padding: 16px 20px;
+        padding: 16px 0;
         position: relative;
         line-height: 1.65;
-        background: var(--bg-light);
-        border-radius: 8px;
-        border-left: 3px solid var(--accent);
-        transition: background 0.2s ease, transform 0.2s ease;
+        background: transparent;
+        border-radius: 0;
+        border-left: none;
+        border-bottom: 1px solid var(--border-light);
+        transition: border-color 0.2s ease;
     }
     #publications ul li:hover {
-        background: #EDF2F7;
-        transform: translateX(4px);
+        border-bottom-color: #CBD5E0;
+    }
+    #publications ul li:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
     }
     #publications .pub-item {
         display: grid;
         grid-template-columns: auto 1fr;
-        gap: 4px 14px;
+        gap: 4px 12px;
         align-items: start;
     }
     #publications .pub-content {
@@ -356,7 +360,7 @@
       }
 
       #publications ul li {
-        padding: 14px 16px;
+        padding: 14px 0;
       }
       #publications .pub-item {
         grid-template-columns: 1fr;
