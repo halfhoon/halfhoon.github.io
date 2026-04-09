@@ -193,6 +193,26 @@
       grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); /* Adjusted minmax */
       gap: 20px;
     }
+    #research-interests .grid-2 {
+      gap: 14px 28px;
+    }
+    #research-interests ul {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    #research-interests li {
+      margin-bottom: 0;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(61, 122, 184, 0.12);
+      font-size: 0.98rem;
+      line-height: 1.6;
+      color: var(--text-dark);
+    }
+    #research-interests li:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
     ul { list-style: none; padding-left: 0; /* Remove default padding */ }
     ul li { margin-bottom: 12px; /* Reduced list item margin */ }
     /* Style for publication list */
@@ -308,36 +328,55 @@
     }
     /* Contact section specific styles */
     #contact .contact-links {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 16px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 14px 20px;
         margin-top: 8px;
     }
     #contact .contact-item {
-        display: inline-flex;
-        align-items: center;
-        gap: 10px;
-        padding: 11px 18px;
+        display: grid;
+        grid-template-columns: 18px 1fr;
+        align-items: start;
+        column-gap: 12px;
+        padding: 10px 0;
         background: transparent;
-        border-radius: 8px;
+        border-radius: 0;
         color: var(--text-dark);
         text-decoration: none;
         transition: all 0.2s ease;
-        border: 1px solid var(--border-light);
+        border: none;
+        border-bottom: 1px solid rgba(61, 122, 184, 0.12);
     }
     #contact .contact-item:hover {
-        background: rgba(61, 122, 184, 0.06);
+        background: transparent;
         color: var(--primary);
-        border-color: rgba(61, 122, 184, 0.24);
-        transform: translateY(-1px);
+        border-bottom-color: rgba(61, 122, 184, 0.3);
+        transform: none;
     }
     #contact .contact-item i {
-        font-size: 1.1rem;
+        font-size: 0.95rem;
         color: var(--accent);
         transition: color 0.2s ease;
+        margin-top: 5px;
     }
     #contact .contact-item:hover i {
         color: var(--primary);
+    }
+    #contact .contact-meta {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+    }
+    #contact .contact-label {
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--accent);
+    }
+    #contact .contact-value {
+        color: var(--text-dark);
+        line-height: 1.55;
     }
     footer {
       text-align: center;
@@ -397,6 +436,9 @@
         grid-template-columns: 1fr;
         gap: 15px;
       }
+      #research-interests .grid-2 {
+        gap: 8px;
+      }
       #publications ul li {
         padding: 14px 0;
       }
@@ -414,11 +456,8 @@
       }
 
       #contact .contact-links {
-        flex-direction: column;
+        grid-template-columns: 1fr;
         gap: 12px;
-      }
-      #contact .contact-item {
-        justify-content: center;
       }
 
       footer {
@@ -538,15 +577,15 @@
       <div class="contact-links">
         <a href="mailto:hoon95@snu.ac.kr" class="contact-item">
           <i class="fas fa-envelope"></i>
-          <span>hoon95@snu.ac.kr</span>
+          <span class="contact-meta"><span class="contact-label">Email</span><span class="contact-value">hoon95@snu.ac.kr</span></span>
         </a>
         <a href="https://www.linkedin.com/in/jaehoon-choi-9299b7343/" target="_blank" rel="noopener noreferrer" class="contact-item">
           <i class="fab fa-linkedin"></i>
-          <span>LinkedIn</span>
+          <span class="contact-meta"><span class="contact-label">LinkedIn</span><span class="contact-value">jaehoon-choi-9299b7343</span></span>
         </a>
         <a href="https://github.com/halfhoon" target="_blank" rel="noopener noreferrer" class="contact-item">
           <i class="fab fa-github"></i>
-          <span>GitHub</span>
+          <span class="contact-meta"><span class="contact-label">GitHub</span><span class="contact-value">halfhoon</span></span>
         </a>
       </div>
     </section>
