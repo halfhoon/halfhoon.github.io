@@ -60,6 +60,92 @@
   html { scroll-behavior: smooth; }
   section[id], header[id] { scroll-margin-top: 80px; }
 
+  /* ---------- Responsive ---------- */
+
+  /* Tablet: tighten outer padding */
+  @media (max-width: 1024px) {
+    .h-page-wrap { padding: 0 40px !important; }
+    .h-hero { padding: 60px 0 48px !important; }
+    .h-hero-grid {
+      grid-template-columns: 1fr 280px !important;
+      gap: 48px !important;
+    }
+    .h-hero h1 { font-size: 64px !important; }
+  }
+
+  /* Mobile: collapse to single column */
+  @media (max-width: 720px) {
+    .h-page-wrap { padding: 0 24px !important; }
+
+    /* Top bar */
+    .h-topbar { flex-wrap: wrap !important; gap: 10px 0; padding: 16px 0 !important; }
+    .h-topbar-nav {
+      width: 100%;
+      gap: 16px !important;
+      flex-wrap: wrap;
+      font-size: 12px !important;
+    }
+    .h-topbar-brand { font-size: 24px !important; }
+
+    /* Hero */
+    .h-hero { padding: 40px 0 32px !important; }
+    .h-hero-grid {
+      grid-template-columns: 1fr !important;
+      gap: 28px !important;
+    }
+    .h-hero-photo {
+      order: -1;
+      width: 220px !important;
+      justify-self: start !important;
+    }
+    .h-hero h1 {
+      font-size: 44px !important;
+      line-height: 1.1 !important;
+    }
+    .h-hero-sub { font-size: 15px !important; }
+    .h-hero-meta { flex-wrap: wrap; gap: 8px 14px !important; }
+
+    /* Chapter header: stack number/label over title */
+    .h-chapter-head {
+      grid-template-columns: 1fr !important;
+      gap: 18px !important;
+      margin-bottom: 24px !important;
+    }
+    .h-chapter-aside { transform: none !important; margin-top: 8px !important; max-width: 100% !important; }
+
+    /* Section chapters — overall vertical rhythm tighter */
+    .h-reveal { padding: 48px 0 !important; }
+
+    /* About drop cap — smaller */
+    .h-dropcap { font-size: 48px !important; line-height: 0.9 !important; margin-right: 10px !important; }
+
+    /* Now: 2-col → 1-col */
+    .h-now-grid { grid-template-columns: 1fr !important; gap: 36px !important; }
+
+    /* Research interests: 2-col → 1-col */
+    .h-research-grid { grid-template-columns: 1fr !important; }
+
+    /* Education row: stack dates over text */
+    .h-edu-row { grid-template-columns: 1fr !important; gap: 4px !important; }
+    .h-edu-dates { font-size: 12px !important; }
+
+    /* Papers cards grid */
+    .h-papers-grid { grid-template-columns: 1fr !important; }
+    /* Papers timeline — make dates label-like */
+    .h-papers-timeline-row { grid-template-columns: 1fr !important; gap: 8px !important; }
+
+    /* Chapter aside (e.g. Papers view toggle) — below title on mobile */
+    .h-chapter-aside-inline { margin-top: 10px; }
+
+    /* Footer */
+    .h-footer {
+      flex-direction: column; gap: 10px;
+      align-items: flex-start !important;
+      padding: 24px 0 !important;
+      font-size: 15px !important;
+    }
+  }
+
   /* Tweaks — edit-mode only */
   .tweaks-panel {
     position: fixed; bottom: 24px; right: 24px; z-index: 50;
@@ -171,9 +257,10 @@ function Homepage() {
       background: t.bg, color: t.ink, minHeight: '100vh',
       fontFamily: H_FONTS.body, fontSize: 15, lineHeight: 1.7,
     }}>
+      <div className="h-page-wrap" style={{ maxWidth: 1200, margin: '0 auto', padding: '0 56px' }}>
       <H_TopBar t={t} />
       <H_Hero t={t} />
-      <main style={{ padding: '0 72px 72px' }}>
+      <main style={{ padding: '0 0 72px' }}>
         <H_About t={t} />
         <H_Now t={t} />
         <H_Education t={t} />
@@ -209,6 +296,7 @@ function Homepage() {
         <H_Contact t={t} />
       </main>
       <H_Footer t={t} />
+      </div>
 
       {editMode && (
         <div className="tweaks-panel">

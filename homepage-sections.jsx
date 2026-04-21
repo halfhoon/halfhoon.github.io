@@ -5,7 +5,7 @@
 function H_Chapter({ number, label, title, children, aside, t, id }) {
   return (
     <section id={id} className="h-reveal" style={{ padding: '72px 0', borderTop: `1px solid ${t.rule}` }}>
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 2.1fr', gap: 56, marginBottom: 36 }}>
+      <div className="h-chapter-head" style={{ display: 'grid', gridTemplateColumns: '1fr 2.1fr', gap: 56, marginBottom: 36 }}>
         <div style={{ position: 'relative' }}>
           <div style={{
             fontFamily: H_FONTS.hand, fontSize: 64, color: t.accent,
@@ -16,7 +16,7 @@ function H_Chapter({ number, label, title, children, aside, t, id }) {
             textTransform: 'uppercase', color: t.muted, fontWeight: 600,
           }}>{label}</div>
           {aside && (
-            <div style={{
+            <div className="h-chapter-aside" style={{
               marginTop: 24, fontFamily: H_FONTS.hand, fontSize: 19,
               color: t.sage, lineHeight: 1.3,
               transform: 'rotate(-1.5deg)', maxWidth: 220,
@@ -40,19 +40,19 @@ function H_Chapter({ number, label, title, children, aside, t, id }) {
 // Top navigation.
 function H_TopBar({ t }) {
   return (
-    <div style={{
-      padding: '20px 72px', display: 'flex', justifyContent: 'space-between',
+    <div className="h-topbar" style={{
+      padding: '20px 0', display: 'flex', justifyContent: 'space-between',
       alignItems: 'center', borderBottom: `1px solid ${t.rule}`,
       position: 'sticky', top: 0, zIndex: 20,
       background: t.bg + 'ee', backdropFilter: 'blur(8px)', WebkitBackdropFilter: 'blur(8px)',
     }}>
-      <a href="#top" style={{
+      <a href="#top" className="h-topbar-brand" style={{
         fontFamily: H_FONTS.hand, fontSize: 28, color: t.accent, fontWeight: 500,
         textDecoration: 'none',
       }}>
         jaehoon.
       </a>
-      <div style={{ display: 'flex', gap: 26, fontSize: 13, fontWeight: 500, color: t.inkSoft }}>
+      <div className="h-topbar-nav" style={{ display: 'flex', gap: 26, fontSize: 13, fontWeight: 500, color: t.inkSoft }}>
         {[
           ['hello', 'hello'],
           ['currently', 'currently'],
@@ -84,8 +84,8 @@ function H_TopBar({ t }) {
 // Hero with photo slider.
 function H_Hero({ t }) {
   return (
-    <header id="top" style={{ padding: '84px 72px 60px', position: 'relative' }}>
-      <div style={{
+    <header id="top" className="h-hero" style={{ padding: '84px 0 60px', position: 'relative' }}>
+      <div className="h-hero-grid" style={{
         display: 'grid', gridTemplateColumns: '1fr 320px',
         gap: 72, alignItems: 'end',
       }}>
@@ -131,7 +131,7 @@ function H_Hero({ t }) {
             </span>
           </h1>
           {/* Affiliation one-liner */}
-          <div style={{
+          <div className="h-hero-meta" style={{
             display: 'flex', alignItems: 'center', gap: 10, marginBottom: 20,
             flexWrap: 'wrap',
             fontFamily: H_FONTS.body, fontSize: 12.5, color: t.inkSoft,
@@ -150,7 +150,7 @@ function H_Hero({ t }) {
               Human-Centered Computing Lab
             </a>
           </div>
-          <p style={{
+          <p className="h-hero-sub" style={{
             fontSize: 17, lineHeight: 1.65, color: t.inkSoft, maxWidth: 540,
           }}>
             Ph.D. student at Seoul National University, working in the{' '}
@@ -165,7 +165,7 @@ function H_Hero({ t }) {
             to meet us where we are.
           </p>
         </div>
-        <div style={{ position: 'relative', justifySelf: 'end', paddingBottom: 72 }}>
+        <div className="h-hero-photo" style={{ position: 'relative', justifySelf: 'end', paddingBottom: 72 }}>
           <H_PhotoSlider t={t} size={320} />
           <div style={{
             position: 'absolute', bottom: 12, left: '50%',
@@ -200,7 +200,7 @@ function H_About({ t }) {
               color: t.ink, marginBottom: 16, maxWidth: 660,
               letterSpacing: '-0.005em', fontWeight: 400,
             }}>
-              <span style={{
+              <span className="h-dropcap" style={{
                 float: 'left',
                 fontFamily: H_FONTS.display,
                 fontSize: 76, lineHeight: 0.85,
@@ -221,7 +221,7 @@ function H_About({ t }) {
           }}>{p}</p>
         );
       })}
-      <div style={{
+      <div className="h-research-grid" style={{
         display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)',
         gap: '10px 28px', marginTop: 30, maxWidth: 640,
       }}>
@@ -253,7 +253,7 @@ function H_Now({ t }) {
       number="ii." label="currently"
       title="What I'm into, these days."
       aside="research questions & things that keep me moving">
-      <div style={{
+      <div className="h-now-grid" style={{
         display: 'grid',
         gridTemplateColumns: 'minmax(0, 1.3fr) minmax(0, 1fr)',
         gap: 32, maxWidth: 760,
@@ -381,12 +381,12 @@ function H_Education({ t }) {
       title="Where I've studied."
       aside="currently in year two of an integrated program">
       {EDUCATION.map((e, i) => (
-        <div key={i} style={{
+        <div key={i} className="h-edu-row" style={{
           display: 'grid', gridTemplateColumns: '180px 1fr',
           gap: 28, padding: '18px 0', maxWidth: 660,
           borderBottom: i === EDUCATION.length - 1 ? 'none' : `1px solid ${t.rule}`,
         }}>
-          <div style={{
+          <div className="h-edu-dates" style={{
             fontFamily: H_FONTS.hand, fontSize: 22,
             color: e.current ? t.accent : t.muted,
             lineHeight: 1.2,
@@ -469,8 +469,8 @@ function H_Contact({ t }) {
 function H_Footer({ t }) {
   const updated = new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
   return (
-    <footer style={{
-      borderTop: `1px solid ${t.rule}`, padding: '32px 72px',
+    <footer className="h-footer" style={{
+      borderTop: `1px solid ${t.rule}`, padding: '32px 0',
       display: 'flex', justifyContent: 'space-between', alignItems: 'center',
       fontFamily: H_FONTS.hand, fontSize: 18, color: t.muted,
       flexWrap: 'wrap', gap: 12,

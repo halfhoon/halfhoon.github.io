@@ -89,7 +89,7 @@ function H_PubCardsView({ pubs, t }) {
 // =========================================================================
 function H_PubRow({ pub, t }) {
   return (
-    <li style={{
+    <li className="h-papers-timeline-row" style={{
       padding: '18px 0',
       borderBottom: `1px solid ${t.rule}`,
       display: 'grid',
