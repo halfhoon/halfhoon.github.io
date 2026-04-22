@@ -23,17 +23,17 @@ const PROFILE = {
 
 const ABOUT_PARAGRAPHS = [
   "I'm a Ph.D. student in the Interdisciplinary Program in Artificial Intelligence at Seoul National University, working in the Human-Centered Computing Lab (HCCL).",
-  "My research explores the evolving relationship between people and AI — at the intersection of human–computer interaction (HCI) and human–AI interaction (HAI). I study how AI mediates and reshapes human experience, how people perceive AI as a social presence in everyday life, and how bias and fairness emerge in multimodal AI systems.",
+  "My research explores the evolving relationship between people and AI — at the intersection of human–computer interaction (HCI) and human–AI interaction (HAI). I study how AI shapes human experience, how people relate to AI as a social presence in everyday life, and how bias and fairness emerge in multimodal AI systems.",
   "My current work spans AI-mediated content experiences, conversational interaction, and accessible technology. I welcome interdisciplinary collaboration with researchers, designers, and developers building more human-centered AI.",
 ];
 
 const RESEARCH_INTERESTS = [
-  { tag: 'HCI', label: 'Human–Computer Interaction', desc: 'How interfaces mediate thought, feeling, and action.' },
-  { tag: 'HAI', label: 'Human–AI Interaction', desc: 'People relating to AI as a social entity.' },
-  { tag: 'A11Y', label: 'Accessibility', desc: 'Technology that meets people where they are.' },
-  { tag: 'CA', label: 'Conversational Agents', desc: 'Voice and dialogue systems that listen well.' },
-  { tag: 'COL', label: 'Human–AI Collaboration', desc: 'Teaming with intelligent systems.' },
-  { tag: 'MM', label: 'Multimodal AI & Fairness', desc: 'Surfacing bias across voice, image, and text.' },
+  { tag: 'HCI', label: 'Human–Computer Interaction', desc: 'Designing how people think, feel, and act through technology.' },
+  { tag: 'HAI', label: 'Human–AI Interaction', desc: 'Understanding how people relate to AI as a social presence.' },
+  { tag: 'A11Y', label: 'Accessibility', desc: 'Building technology that meets people where they are.' },
+  { tag: 'CA', label: 'Conversational Agents', desc: 'Designing voice and dialogue systems that listen well.' },
+  { tag: 'COL', label: 'Human–AI Collaboration', desc: 'Exploring how people work with intelligent systems.' },
+  { tag: 'MM', label: 'Multimodal AI & Fairness', desc: 'Revealing bias across voice, image, and text.' },
 ];
 
 const EDUCATION = [
