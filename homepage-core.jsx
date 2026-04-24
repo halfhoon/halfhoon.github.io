@@ -49,6 +49,7 @@ function H_PhotoSlider({ t, size = 320 }) {
   const photos = (PROFILE.photos && PROFILE.photos.length > 1)
     ? PROFILE.photos
     : [PROFILE.photo];
+  const photoPositions = PROFILE.photoPositions || {};
   const [idx, setIdx] = React.useState(0);
   const n = photos.length;
 
@@ -84,6 +85,7 @@ function H_PhotoSlider({ t, size = 320 }) {
             style={{
               position: 'absolute', inset: 0, width: '100%', height: '100%',
               objectFit: 'cover',
+              objectPosition: photoPositions[src] || '50% 50%',
               opacity: i === idx ? 1 : 0,
               transition: 'opacity .8s cubic-bezier(.4,0,.2,1)',
             }}

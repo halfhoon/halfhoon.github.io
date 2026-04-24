@@ -19,6 +19,9 @@ const PROFILE = {
   photo: 'assets/photo-kyoto.jpeg',
   // Add more photos here — the hero slider auto-rotates through them.
   photos: ['assets/photo-kyoto.jpeg', 'assets/photo-italy.jpeg', 'assets/photo-osaka.jpeg'],
+  photoPositions: {
+    'assets/photo-italy.jpeg': '72% 38%',
+  },
 };
 
 const ABOUT_PARAGRAPHS = [
