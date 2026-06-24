@@ -1798,9 +1798,24 @@
     const storageKey = 'jaehoon-theme-v6';
     const viewPanels = [...document.querySelectorAll('[data-view-panel]')];
     const viewTargets = [...document.querySelectorAll('[data-view-target]')];
+    const yearTargets = [...document.querySelectorAll('.year-index a[href^="#pub-"]')];
     const validViews = viewPanels.map(panel => panel.dataset.viewPanel);
 
-    function setActiveView(view, { push = false } = {}) {
+    function viewFromHash(hash = location.hash) {
+      const target = hash.replace('#', '');
+      if (validViews.includes(target)) return target;
+      if (target.startsWith('pub-')) return 'publications';
+      return 'home';
+    }
+
+    function scrollToHashTarget(hash = location.hash, { behavior = 'auto' } = {}) {
+      const target = hash.replace('#', '');
+      if (!target.startsWith('pub-')) return;
+      const node = document.getElementById(target);
+      if (node) node.scrollIntoView({ behavior, block: 'start' });
+    }
+
+    function setActiveView(view, { push = false, scrollTop = true } = {}) {
       const next = validViews.includes(view) ? view : 'home';
       viewPanels.forEach(panel => {
         panel.hidden = panel.dataset.viewPanel !== next;
@@ -1817,7 +1832,7 @@
           : `${location.pathname}${location.search}#${next}`;
         history.pushState({ view: next }, '', url);
       }
-      window.scrollTo({ top: 0, behavior: 'auto' });
+      if (scrollTop) window.scrollTo({ top: 0, behavior: 'auto' });
     }
 
     viewTargets.forEach(target => {
@@ -1828,7 +1843,20 @@
     });
 
     window.addEventListener('popstate', () => {
-      setActiveView(location.hash.replace('#', '') || 'home');
+      const isPublicationAnchor = location.hash.replace('#', '').startsWith('pub-');
+      setActiveView(viewFromHash(), { scrollTop: !isPublicationAnchor });
+      if (isPublicationAnchor) {
+        requestAnimationFrame(() => scrollToHashTarget());
+      }
+    });
+
+    yearTargets.forEach(target => {
+      target.addEventListener('click', event => {
+        event.preventDefault();
+        setActiveView('publications', { scrollTop: false });
+        const node = document.querySelector(target.getAttribute('href'));
+        if (node) node.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
     });
 
     function readSavedTheme() {
@@ -1933,7 +1961,12 @@
       ? requestedVenue
       : 'all';
     applyPubFilter(initialVenue);
-    setActiveView(location.hash.replace('#', '') || 'home');
+    const initialHash = location.hash.replace('#', '');
+    const startsAtPublicationAnchor = initialHash.startsWith('pub-');
+    setActiveView(viewFromHash(), { scrollTop: !startsAtPublicationAnchor });
+    if (startsAtPublicationAnchor) {
+      requestAnimationFrame(() => scrollToHashTarget());
+    }
 
     const elsewhereSection = document.querySelector('.elsewhere');
     const board = document.querySelector('.photo-board');
