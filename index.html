@@ -1203,6 +1203,11 @@
         grid-template-columns: 1fr;
       }
 
+      .work .section-grid,
+      .elsewhere .section-grid {
+        grid-template-columns: 1fr;
+      }
+
       .hero {
         min-height: 0;
       }
@@ -1213,6 +1218,11 @@
       .elsewhere {
         padding-left: 22px;
         padding-right: 22px;
+      }
+
+      .work {
+        --content-width: calc(100vw - 44px);
+        overflow-x: hidden;
       }
 
       .rail {
@@ -1278,6 +1288,32 @@
         padding-top: 0;
       }
 
+      .work .section-grid,
+      .work .section-grid > *,
+      .work .section-grid > div,
+      .pub-intro,
+      .pub-filters,
+      .pub-table,
+      .pub-group,
+      .pub-list-label,
+      .pub-group > div,
+      .pub-row,
+      .abstract-panel {
+        width: var(--content-width);
+        min-width: 0;
+        max-width: var(--content-width);
+      }
+
+      .pub-group > *,
+      .pub-row > *,
+      .pub-title,
+      .pub-meta,
+      .pub-equal {
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+      }
+
       .year-index {
         display: flex;
         flex-wrap: wrap;
@@ -1303,12 +1339,45 @@
         grid-template-columns: 1fr;
       }
 
+      .pub-group,
+      .pub-row {
+        display: block;
+      }
+
+      .pub-row {
+        gap: 10px;
+      }
+
       .pub-table {
         max-width: 100%;
       }
 
+      .pub-filters {
+        margin-top: 0;
+      }
+
+      .pub-list-label {
+        align-items: flex-start;
+        gap: 12px;
+      }
+
+      .pub-list-label span {
+        display: none;
+      }
+
       .pub-year {
         padding-top: 24px;
+      }
+
+      .pub-title,
+      .pub-title a,
+      .pub-meta,
+      .pub-equal {
+        display: block;
+        width: var(--content-width);
+        max-width: var(--content-width);
+        overflow-wrap: anywhere;
+        word-break: normal;
       }
 
       .pub-venue {
@@ -1380,6 +1449,10 @@
     }
 
     @media (max-width: 520px) {
+      .work {
+        --content-width: min(calc(100vw - 44px), 320px);
+      }
+
       .intro h1,
       .section-title,
       .thesis,
@@ -1398,7 +1471,7 @@
       .pub-title,
       .pub-meta,
       .pub-equal {
-        max-width: 346px;
+        max-width: calc(100vw - 44px);
       }
     }
   </style>
@@ -1715,7 +1788,7 @@
 
     <footer class="footer">
       <span>Jaehoon Choi</span>
-      <span><a class="text-link" href="#home" data-view-target="home">Home</a> · <a class="text-link" href="#publications" data-view-target="publications">Publications</a> · <a class="text-link" href="#elsewhere" data-view-target="elsewhere">Elsewhere</a></span>
+      <span>Seoul · 2026</span>
     </footer>
   </main>
 
