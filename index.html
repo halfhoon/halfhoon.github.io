@@ -84,7 +84,6 @@
       --caption-ink: #183040;
       --note-bg: rgba(255, 255, 255, 0.88);
       --note-ink: #314b5a;
-      --footer-bg: #f7f7f3;
       --serif: "Newsreader", "Iowan Old Style", "New York", Georgia, serif;
       --sans: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Apple SD Gothic Neo", sans-serif;
       --mono: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Apple SD Gothic Neo", sans-serif;
@@ -155,7 +154,6 @@
       --caption-ink: #e7f5fb;
       --note-bg: rgba(5, 14, 21, 0.76);
       --note-ink: #d4e8ef;
-      --footer-bg: #050a0f;
     }
 
     * {
@@ -198,15 +196,14 @@
       align-items: center;
       justify-content: space-between;
       border-bottom: 1px solid var(--line);
-      font: 700 12px/1 var(--sans);
-      letter-spacing: 0.055em;
-      text-transform: uppercase;
+      font: 650 14px/1 var(--sans);
+      letter-spacing: 0.005em;
       color: var(--topbar-color);
     }
 
     .nav {
       display: flex;
-      gap: 28px;
+      gap: 34px;
       align-items: center;
       color: var(--muted);
     }
@@ -1157,19 +1154,6 @@
       text-align: right;
     }
 
-    .footer {
-      height: 104px;
-      padding: 0 72px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      color: var(--muted);
-      font: 700 11px/1 var(--sans);
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      background: var(--footer-bg);
-    }
-
     @media (prefers-reduced-motion: reduce) {
       .scene,
       .inline-times,
@@ -1441,13 +1425,6 @@
         height: 164px;
       }
 
-      .footer {
-        height: auto;
-        padding: 24px 22px;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 14px;
-      }
     }
 
     @media (max-width: 520px) {
@@ -1799,10 +1776,6 @@
       <p class="elsewhere-line">between sessions, after practice, on the road.</p>
     </section>
 
-    <footer class="footer">
-      <span>Jaehoon Choi</span>
-      <span>Seoul · 2026</span>
-    </footer>
   </main>
 
   <script>
