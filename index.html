@@ -475,18 +475,14 @@
 
     .update-list {
       display: grid;
-      gap: 0;
+      grid-template-columns: max-content minmax(0, 1fr);
+      column-gap: 30px;
+      row-gap: 18px;
+      align-items: baseline;
     }
 
     .update-item {
-      display: grid;
-      grid-template-columns: 82px minmax(0, 1fr);
-      gap: 18px;
-      padding: 11px 0;
-    }
-
-    .update-item:last-child {
-      border-bottom: 0;
+      display: contents;
     }
 
     .update-year {
