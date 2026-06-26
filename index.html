@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Jaehoon Choi</title>
   <meta name="description" content="Jaehoon Choi is an HCI researcher and Ph.D. student in Artificial Intelligence at Seoul National University, advised by Prof. Bongwon Suh in the Human-Centered Computing Lab." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400..700&display=swap" rel="stylesheet" />
   <script>
     (() => {
       const params = new URLSearchParams(window.location.search);
@@ -82,9 +85,9 @@
       --note-bg: rgba(255, 255, 255, 0.88);
       --note-ink: #314b5a;
       --footer-bg: #f7f7f3;
-      --serif: "Iowan Old Style", "New York", Georgia, serif;
-      --sans: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", "Apple SD Gothic Neo", sans-serif;
-      --mono: "SFMono-Regular", ui-monospace, Menlo, Consolas, monospace;
+      --serif: "Newsreader", "Iowan Old Style", "New York", Georgia, serif;
+      --sans: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Apple SD Gothic Neo", sans-serif;
+      --mono: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Apple SD Gothic Neo", sans-serif;
       --hand: "Caveat", "Bradley Hand", "Segoe Print", cursive;
     }
 
@@ -195,8 +198,8 @@
       align-items: center;
       justify-content: space-between;
       border-bottom: 1px solid var(--line);
-      font: 700 11px/1 var(--mono);
-      letter-spacing: 0.10em;
+      font: 700 12px/1 var(--sans);
+      letter-spacing: 0.055em;
       text-transform: uppercase;
       color: var(--topbar-color);
     }
@@ -239,8 +242,8 @@
       border-radius: 999px;
       background: var(--toggle-bg);
       color: var(--toggle-text);
-      font: 720 10px/1 var(--mono);
-      letter-spacing: 0.08em;
+      font: 700 11px/1 var(--sans);
+      letter-spacing: 0.045em;
       text-transform: uppercase;
       cursor: pointer;
       transition: background 180ms ease, border-color 180ms ease, color 180ms ease;
@@ -354,8 +357,8 @@
     .small-meta {
       margin-top: 34px;
       color: var(--muted);
-      font: 700 10px/1.55 var(--mono);
-      letter-spacing: 0.11em;
+      font: 700 11px/1.5 var(--sans);
+      letter-spacing: 0.06em;
       text-transform: uppercase;
     }
 
@@ -468,8 +471,8 @@
       display: block;
       margin-bottom: 14px;
       color: var(--blue);
-      font: 720 10px/1 var(--mono);
-      letter-spacing: 0.11em;
+      font: 700 11px/1 var(--sans);
+      letter-spacing: 0.06em;
       text-transform: uppercase;
     }
 
@@ -487,8 +490,8 @@
 
     .update-year {
       color: var(--muted);
-      font: 720 10px/1.4 var(--mono);
-      letter-spacing: 0.1em;
+      font: 700 11px/1.35 var(--sans);
+      letter-spacing: 0.055em;
       text-transform: uppercase;
     }
 
@@ -545,8 +548,8 @@
     .kicker {
       margin-top: 10px;
       color: var(--muted);
-      font: 720 11px/1 var(--mono);
-      letter-spacing: 0.13em;
+      font: 700 12px/1 var(--sans);
+      letter-spacing: 0.07em;
       text-transform: uppercase;
     }
 
@@ -595,8 +598,8 @@
     }
 
     .year-index small {
-      font: 720 9px/1 var(--mono);
-      letter-spacing: 0.1em;
+      font: 700 10px/1 var(--sans);
+      letter-spacing: 0.055em;
       text-transform: uppercase;
     }
 
@@ -637,8 +640,8 @@
 
     .pub-stat span {
       color: var(--muted);
-      font: 720 10px/1.25 var(--mono);
-      letter-spacing: 0.11em;
+      font: 700 11px/1.25 var(--sans);
+      letter-spacing: 0.055em;
       text-transform: uppercase;
     }
 
@@ -660,13 +663,13 @@
 
     .pub-filters button {
       appearance: none;
-      height: 28px;
-      padding: 0 10px;
+      height: 30px;
+      padding: 0 11px;
       border: 1px solid var(--pub-tag-border);
       background: var(--pub-action-bg);
       color: var(--muted);
-      font: 720 10px/1 var(--mono);
-      letter-spacing: 0.08em;
+      font: 700 11px/1 var(--sans);
+      letter-spacing: 0.045em;
       text-transform: uppercase;
       cursor: pointer;
       transition: color 160ms ease, border-color 160ms ease, background 160ms ease;
@@ -692,16 +695,16 @@
 
     .pub-list-label b {
       padding-left: calc(var(--pub-year-col) + var(--pub-col-gap));
-      font: 720 11px/1 var(--mono);
-      letter-spacing: 0.13em;
+      font: 700 12px/1 var(--sans);
+      letter-spacing: 0.065em;
       text-transform: uppercase;
     }
 
     .pub-list-label span {
       padding-right: 18px;
       color: var(--muted);
-      font: 720 10px/1 var(--mono);
-      letter-spacing: 0.11em;
+      font: 700 11px/1 var(--sans);
+      letter-spacing: 0.055em;
       text-transform: uppercase;
     }
 
@@ -779,15 +782,15 @@
     .pub-equal {
       margin-top: 4px;
       color: var(--muted);
-      font: 680 10px/1.25 var(--mono);
-      letter-spacing: 0.08em;
+      font: 650 11px/1.25 var(--sans);
+      letter-spacing: 0.055em;
       text-transform: uppercase;
     }
 
     .pub-venue {
       color: var(--muted);
-      font: 720 10px/1.25 var(--mono);
-      letter-spacing: 0.09em;
+      font: 700 11px/1.25 var(--sans);
+      letter-spacing: 0.055em;
       text-transform: uppercase;
       text-align: right;
       padding: 4px 18px 0 0;
@@ -804,20 +807,20 @@
     .abstract-toggle {
       display: inline-flex;
       align-items: center;
-      height: 24px;
-      padding: 0 8px;
+      height: 26px;
+      padding: 0 9px;
       border: 1px solid var(--pub-tag-border);
       background: var(--pub-action-bg);
       color: var(--blue);
-      font: 720 9px/1 var(--mono);
-      letter-spacing: 0.08em;
+      font: 700 10px/1 var(--sans);
+      letter-spacing: 0.05em;
       text-transform: uppercase;
       text-decoration: none;
       cursor: pointer;
     }
 
     .abstract-toggle {
-      font-family: var(--mono);
+      font-family: var(--sans);
     }
 
     .abstract-toggle:hover,
@@ -921,8 +924,8 @@
       padding: 0 10px;
       background: transparent;
       color: var(--elsewhere-text);
-      font: 760 10px/1 var(--mono);
-      letter-spacing: 0.1em;
+      font: 700 11px/1 var(--sans);
+      letter-spacing: 0.055em;
       cursor: pointer;
     }
 
@@ -1136,8 +1139,8 @@
       padding: 7px 9px;
       background: var(--caption-bg);
       color: var(--caption-ink);
-      font: 760 10px/1 var(--mono);
-      letter-spacing: 0.11em;
+      font: 700 10px/1 var(--sans);
+      letter-spacing: 0.06em;
       text-transform: uppercase;
     }
 
@@ -1161,8 +1164,8 @@
       align-items: center;
       justify-content: space-between;
       color: var(--muted);
-      font: 720 11px/1 var(--mono);
-      letter-spacing: 0.11em;
+      font: 700 11px/1 var(--sans);
+      letter-spacing: 0.06em;
       text-transform: uppercase;
       background: var(--footer-bg);
     }
