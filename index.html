@@ -422,7 +422,7 @@
     .prose p {
       margin: 0;
       color: var(--body);
-      font: 430 18px/1.62 var(--serif);
+      font: 430 19px/1.58 var(--serif);
       letter-spacing: -0.008em;
     }
 
@@ -643,6 +643,8 @@
     }
 
     .pub-table {
+      --pub-year-col: 118px;
+      --pub-col-gap: 28px;
       border-top: 1px solid var(--line);
       max-width: 980px;
       min-width: 0;
@@ -689,14 +691,14 @@
     }
 
     .pub-list-label b {
-      padding-left: 14px;
+      padding-left: calc(var(--pub-year-col) + var(--pub-col-gap));
       font: 720 11px/1 var(--mono);
       letter-spacing: 0.13em;
       text-transform: uppercase;
     }
 
     .pub-list-label span {
-      padding-right: 14px;
+      padding-right: 0;
       color: var(--muted);
       font: 720 10px/1 var(--mono);
       letter-spacing: 0.11em;
@@ -705,8 +707,8 @@
 
     .pub-group {
       display: grid;
-      grid-template-columns: 118px minmax(0, 1fr);
-      gap: 28px;
+      grid-template-columns: var(--pub-year-col) minmax(0, 1fr);
+      gap: var(--pub-col-gap);
       border-bottom: 1px solid var(--line);
       scroll-margin-top: 110px;
     }
@@ -1354,6 +1356,10 @@
         gap: 12px;
       }
 
+      .pub-list-label b {
+        padding-left: 14px;
+      }
+
       .pub-list-label span {
         display: none;
       }
@@ -1510,7 +1516,7 @@
           <h1>Jaehoon, <em>a researcher</em> of <span class="headline-pair">people <span class="inline-times" aria-hidden="true">×</span> AI.</span></h1>
           <div class="thesis">I study how AI systems interpret people, represent social cues, and change how people communicate, decide, and act.</div>
           <div class="prose">
-            <p>I am an HCI researcher and Ph.D. student in Artificial Intelligence at Seoul National University, advised by Prof. Bongwon Suh in the <a class="text-link" href="https://snuhcc.github.io" target="_blank" rel="noreferrer">Human-Centered Computing Lab</a>.</p>
+            <p>I am an HCI researcher in the <a class="text-link" href="https://snuhcc.github.io" target="_blank" rel="noreferrer">Human-Centered Computing Lab</a> at Seoul National University, advised by Prof. Bongwon Suh.</p>
             <p>My research examines how AI systems shape the ways people communicate, make decisions, access information, and present themselves. I am especially interested in moments where AI does more than provide outputs: when it interprets people, represents social cues, personalizes experiences, and influences how users trust, resist, or adapt to it.</p>
             <p>Recently, I have explored these questions through projects on multimodal AI agents, AI-mediated communication, accessibility, media experiences, and workplace support.</p>
           </div>
