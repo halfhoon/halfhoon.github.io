@@ -615,7 +615,7 @@
     .pub-intro {
       display: flex;
       justify-content: flex-start;
-      margin: -8px 0 26px;
+      margin: 0 0 28px;
       max-width: 930px;
     }
 
@@ -657,7 +657,7 @@
       flex-wrap: wrap;
       gap: 8px;
       max-width: 980px;
-      margin: -12px 0 28px;
+      margin: 0 0 32px;
     }
 
     .pub-filters button {
@@ -1820,6 +1820,10 @@
     function scrollToHashTarget(hash = location.hash, { behavior = 'auto' } = {}) {
       const target = hash.replace('#', '');
       if (!target.startsWith('pub-')) return;
+      if (target === 'pub-2026') {
+        window.scrollTo({ top: 0, behavior });
+        return;
+      }
       const node = document.getElementById(target);
       if (node) node.scrollIntoView({ behavior, block: 'start' });
     }
@@ -1862,6 +1866,11 @@
     yearTargets.forEach(target => {
       target.addEventListener('click', event => {
         event.preventDefault();
+        const targetId = target.getAttribute('href')?.replace('#', '') || '';
+        if (targetId === 'pub-2026') {
+          setActiveView('publications', { scrollTop: true });
+          return;
+        }
         setActiveView('publications', { scrollTop: false });
         const node = document.querySelector(target.getAttribute('href'));
         if (node) node.scrollIntoView({ behavior: 'smooth', block: 'start' });
