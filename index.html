@@ -269,7 +269,6 @@
       display: grid;
       grid-template-columns: 410px minmax(0, 1fr);
       min-height: 720px;
-      border-bottom: 1px solid var(--line);
     }
 
     .hero > *,
@@ -283,7 +282,6 @@
 
     .rail {
       padding: 64px 56px 56px 72px;
-      border-right: 1px solid var(--line);
       background: var(--rail-bg);
     }
 
@@ -299,8 +297,6 @@
 
     .identity {
       margin-top: 26px;
-      padding-top: 22px;
-      border-top: 1px solid var(--line);
     }
 
     .name {
@@ -465,8 +461,7 @@
 
     .updates,
     .thread-note {
-      padding-top: 14px;
-      border-top: 1px solid var(--line);
+      padding-top: 0;
     }
 
     .panel-label {
@@ -488,7 +483,6 @@
       grid-template-columns: 82px minmax(0, 1fr);
       gap: 18px;
       padding: 11px 0;
-      border-bottom: 1px solid var(--line);
     }
 
     .update-item:last-child {
@@ -518,6 +512,10 @@
       font: 600 24px/1.15 var(--hand);
       letter-spacing: 0;
       transform: rotate(-1.5deg);
+    }
+
+    body[data-view="home"] .topbar {
+      border-bottom-color: transparent;
     }
 
     .thread-copy {
@@ -1226,7 +1224,7 @@
 
       .rail {
         border-right: 0;
-        border-bottom: 1px solid var(--line);
+        border-bottom: 0;
         padding-top: 34px;
         padding-bottom: 34px;
       }
@@ -1527,6 +1525,10 @@
             <span class="panel-label">Updates</span>
             <div class="update-list">
               <div class="update-item">
+                <div class="update-year">ASSETS 2026</div>
+                <div class="update-text">A paper on domain-specific alt text criteria accepted.</div>
+              </div>
+              <div class="update-item">
                 <div class="update-year">ACL 2026</div>
                 <div class="update-text">Three Findings papers accepted. See you in San Diego. 🇺🇸</div>
               </div>
@@ -1555,7 +1557,7 @@
         <aside class="publication-index">
           <div class="kicker">Publications</div>
           <nav class="year-index" aria-label="Jump to publication year">
-            <a href="#pub-2026"><span>2026</span><small>5</small></a>
+            <a href="#pub-2026"><span>2026</span><small>6</small></a>
             <a href="#pub-2025"><span>2025</span><small>6</small></a>
             <a href="#pub-2023"><span>2023</span><small>1</small></a>
           </nav>
@@ -1564,7 +1566,7 @@
           <h2 class="section-title">Publications</h2>
           <div class="pub-intro">
             <div class="pub-stats">
-              <div class="pub-stat"><b>8</b><span>International</span></div>
+              <div class="pub-stat"><b>9</b><span>International</span></div>
               <div class="pub-stat"><b>4</b><span>Domestic</span></div>
             </div>
           </div>
@@ -1580,7 +1582,7 @@
           </div>
 
           <div class="pub-table">
-            <div class="pub-list-label" data-scope-label="international"><b>International</b><span>8 papers & demos</span></div>
+            <div class="pub-list-label" data-scope-label="international"><b>International</b><span>9 papers & demos</span></div>
             <div class="pub-group" id="pub-2026" data-scope="international">
               <div class="pub-year">2026</div>
               <div>
@@ -1609,6 +1611,13 @@
                     <div class="abstract-panel">Early-career employees are particularly vulnerable to workplace stress due to psychosocial stressors such as high work demands and low job control. Despite the importance of addressing these stressors, existing digital interventions for early-career employees focus on information-oriented support like onboarding. This study presents an attribution reframing chatbot (AR chatbot) for workplace stress management among early-career employees. Attribution reframing offers a cognitive intervention point of psychosocial stressors by shifting how individuals interpret stress causes along locus and controllability dimensions. Following formative interviews with 11 early-career employees exploring stress situations and interpretation patterns, we evaluated the AR chatbot with 14 early-career employees across two common stress situations. In work-related situation, stress and controllability significantly improved alongside confidence and readiness, whereas in interpersonal situation, only confidence showed improvement. This study contributes to a deeper understanding of workplace stress among early-career employees and offers design implications for supporting early-career employees with the AR chatbot.</div>
                   </div>
                   <div class="pub-venue">CHI Poster</div>
+                </div>
+                <div class="pub-row" data-venue="assets">
+                  <div>
+                    <div class="pub-title">Domain-Specific Alt Text Criteria Grounded in BLV Feedback: Evidence from E-Commerce</div>
+                    <div class="pub-meta">Song H., Shin M., <strong>Jaehoon Choi</strong>, Kim Y., Jang K., Suh B., Jung H. · to appear</div>
+                  </div>
+                  <div class="pub-venue">ASSETS</div>
                 </div>
                 <div class="pub-row" data-venue="acl">
                   <div>
