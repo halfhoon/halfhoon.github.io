@@ -1154,6 +1154,22 @@
       text-align: right;
     }
 
+    .site-note {
+      min-height: 112px;
+      padding: 34px 72px 48px;
+      display: flex;
+      justify-content: flex-end;
+      color: var(--muted);
+      background: transparent;
+      font: 430 17px/1.45 var(--serif);
+      letter-spacing: -0.006em;
+      text-align: right;
+    }
+
+    .site-note span {
+      max-width: 360px;
+    }
+
     @media (prefers-reduced-motion: reduce) {
       .scene,
       .inline-times,
@@ -1423,6 +1439,13 @@
         bottom: 0;
         width: 126px;
         height: 164px;
+      }
+
+      .site-note {
+        min-height: 88px;
+        padding: 28px 22px 36px;
+        justify-content: flex-start;
+        text-align: left;
       }
 
     }
@@ -1775,6 +1798,10 @@
       </div>
       <p class="elsewhere-line">between sessions, after practice, on the road.</p>
     </section>
+
+    <footer class="site-note">
+      <span>notes from the work, and the life around it.</span>
+    </footer>
 
   </main>
 
