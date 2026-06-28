@@ -1593,9 +1593,11 @@
               <div>
                 <div class="pub-row" data-venue="acl">
                   <div>
-                    <div class="pub-title">Whose Voice, Whose Avatar? Gender Matching Bias in Multimodal AI Teammates</div>
-                    <div class="pub-meta">Kim K.*, <strong>Jaehoon Choi*</strong>, Yoo H., Suh B. · to appear</div>
+                    <div class="pub-title"><a href="https://aclanthology.org/2026.findings-acl.2057/" target="_blank" rel="noreferrer">Whose Voice, Whose Avatar? Gender Matching Bias in Multimodal AI Teammates</a></div>
+                    <div class="pub-meta">Kim K.*, <strong>Jaehoon Choi*</strong>, Yoo H., Suh B.</div>
                     <div class="pub-equal">* Equal contribution.</div>
+                    <div class="pub-actions"><button type="button" class="abstract-toggle" aria-expanded="false">Abstract</button></div>
+                    <div class="abstract-panel">Multimodal Large Language Models (MLLMs) are increasingly deployed as social agents, yet their ability to integrate conflicting identity cues remains underexplored. We audit gender bias in ten recent MLLMs using a counterfactual cooperative gaming task that pairs synthetic voices with avatars of varying gender presentation and visual fidelity. Our analysis reveals distinct bias patterns that can occur independently: closed-source models (eg, Gemini 2.5/3) exhibit a near-deterministic “voice-matching” bias that enforces binary alignment between voice and appearance, whereas open-weight models (eg, Qwen-2.5-Omni-7B) show limited responsiveness to vocal cues and instead exhibit context-driven stereotypes, such as preferring male avatars in combat scenarios. We further find that reducing visual realism attenuates matching tendencies in some models. These findings demonstrate that multimodal fairness is not monolithic; models may appear unbiased on one dimension while enforcing strict identity congruence or role-based stereotypes on another. Code and data are available at https://github.com/halfhoon/whose-voice-whose-avatar.</div>
                   </div>
                   <div class="pub-venue">ACL Findings</div>
                 </div>
@@ -1626,15 +1628,19 @@
                 </div>
                 <div class="pub-row" data-venue="acl">
                   <div>
-                    <div class="pub-title">Visual Interference in Speech Evaluation: Cultural Asymmetry and Cross-Modal Bias in MLLMs</div>
-                    <div class="pub-meta">Kim K., Yoo H., <strong>Jaehoon Choi</strong>, Rosen G., Suh B. · to appear</div>
+                    <div class="pub-title"><a href="https://aclanthology.org/2026.findings-acl.1362/" target="_blank" rel="noreferrer">Visual Interference in Speech Evaluation: Cultural Asymmetry and Cross-Modal Bias in MLLMs</a></div>
+                    <div class="pub-meta">Kim K., Yoo H., <strong>Jaehoon Choi</strong>, Rosen G., Suh B.</div>
+                    <div class="pub-actions"><button type="button" class="abstract-toggle" aria-expanded="false">Abstract</button></div>
+                    <div class="abstract-panel">The transition to end-to-end Multimodal Large Language Models (MLLMs) has positioned these architectures as active social evaluators in high-stakes domains. However, it remains unclear whether these models maintain objective auditory perception or succumb to the "Hearing with Eyes" phenomenon, where visual racial cues distort linguistic proficiency evaluations. We investigate this cross-modal bias by constructing a controlled counterfactual dataset utilizing a Visual Matched-Guise Paradigm. By pairing identical native audio with diverse visual personas across English and Korean contexts, we reveal a distinct Cultural Asymmetry in model behavior. In Anglophone settings, most closed models exhibit Reverse Linguistic Stereotyping, hallucinating non-native accents for Asian speakers despite standard native audio. Conversely, in Korean settings, the same models assign baseline-relative competence premiums across all visual personas, with the largest gains for out-group (White/Black) speakers, consistent with Expectancy Violation Theory. Our findings demonstrate that MLLMs do not merely process sensory inputs but actively reproduce context-dependent sociolinguistic ideologies.</div>
                   </div>
                   <div class="pub-venue">ACL Findings</div>
                 </div>
                 <div class="pub-row" data-venue="acl">
                   <div>
-                    <div class="pub-title">CliniCAST: Benchmarking Acoustic Grounding and Text Dominance in Medical Triage</div>
-                    <div class="pub-meta">Kim K., Yoo H., <strong>Jaehoon Choi</strong>, Kim K., Rosen G., Suh B. · to appear</div>
+                    <div class="pub-title"><a href="https://aclanthology.org/2026.findings-acl.2056/" target="_blank" rel="noreferrer">CliniCAST: Benchmarking Acoustic Grounding and Text Dominance in Medical Triage</a></div>
+                    <div class="pub-meta">Kim K., Yoo H., <strong>Jaehoon Choi</strong>, Kim K., Rosen G., Suh B.</div>
+                    <div class="pub-actions"><button type="button" class="abstract-toggle" aria-expanded="false">Abstract</button></div>
+                    <div class="abstract-panel">Recent Large Audio-Language Models (LALMs) integrate acoustic capabilities into reasoning, yet whether they reliably ground clinical judgments in audible evidence remains unproven. We introduce CliniCAST (Clinical Controlled Acoustic Synthetic Triage), a controlled benchmark that disentangles clinically meaningful acoustic cues from lexical content and speaker demographics. CliniCAST comprises 5,856 synthetic samples across 12 disease conditions: 4,800 audio samples forming 2,400 tagged–untagged pairs for five-level emergency triage, and 1,056 audio–text inconsistent samples in which reassuring speech is paired with high-risk acoustic cues. Evaluating a diverse suite of audio-capable foundation models, we find that LALMs exhibit fragile acoustic grounding and a pronounced “text dominance” failure mode: reassuring lexical content suppresses response to audible distress signals even under safety-critical conditions. Age and gender interactions are weak across conditions, indicating that the primary failure mode is insufficient cross-modal integration rather than demographic bias. These results suggest current LALMs are not yet robust enough for high-stakes medical triage, and motivate training objectives that explicitly enforce reliance on clinically grounded audible evidence.</div>
                   </div>
                   <div class="pub-venue">ACL Findings</div>
                 </div>
