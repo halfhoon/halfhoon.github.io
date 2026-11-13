@@ -1,0 +1,16 @@
+:root {
+  --space-3xs: 2px; --space-2xs: 4px; --space-xs: 8px; --space-sm: 12px; --space-md: 16px; --space-lg: 24px; --space-xl: 40px; --space-2xl: 64px; --space-3xl: 96px; --space-4xl: 144px;
+  --text-xs: .8125rem; --text-sm: .875rem; --text-md: 1rem; --text-lg: 1.25rem;
+  --font-display: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  --font-body: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-editorial: var(--font-body);
+  --color-paper: #fff; --color-paper-2: #fff; --color-paper-3: #f5f5f5;
+  --color-ink: #171717; --color-ink-2: #3d3d3d; --color-muted: #656565; --color-rule: #e2e2e2;
+  --color-accent: #171717; --color-accent-ink: #fff; --color-focus: #171717;
+  --color-link-rule: #999; --color-clear: transparent; --color-photo-ink: #fff; --color-photo-scrim: #171717d9; --color-backdrop: #000b;
+  --container: 1280px; --gutter: 48px; --gap-columns: 40px;
+  --section-gap-s: 80px; --section-gap: 96px; --section-gap-l: 120px;
+  --radius-control: 2px; --radius-image: 0px;
+  --z-modal: 400; --dur-micro: 120ms; --ease-out: ease-out;
+  color-scheme: light;
+}
