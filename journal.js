@@ -41,17 +41,29 @@ document.querySelectorAll('.year-index a').forEach(link => link.addEventListener
   renderRoute();
 }));
 
-document.querySelectorAll('[data-paper-abstract]').forEach(button => button.addEventListener('click', () => {
-  history.pushState({}, '', '#publications');
-  setView('publications');
-  filterPublications('all');
-  const row = document.querySelectorAll('.pub-row')[Number(button.dataset.paperAbstract)];
-  row.classList.add('is-open');
-  const toggle = row.querySelector('.abstract-toggle');
-  toggle?.setAttribute('aria-expanded', 'true');
-  row.scrollIntoView({ block: 'start' });
-  toggle?.focus({ preventScroll: true });
-}));
+document.querySelectorAll('[data-paper-abstract]').forEach(button => {
+  const item = button.closest('.research-item');
+  const source = document.querySelectorAll('.pub-row')[Number(button.dataset.paperAbstract)]?.querySelector('.abstract-panel');
+  if (!item || !source) return;
+  const panel = document.createElement('div');
+  panel.className = 'research-abstract';
+  panel.id = `research-abstract-${button.dataset.paperAbstract}`;
+  panel.hidden = true;
+  panel.innerHTML = source.innerHTML;
+  button.id = `research-toggle-${button.dataset.paperAbstract}`;
+  button.setAttribute('aria-controls', panel.id);
+  button.setAttribute('aria-expanded', 'false');
+  panel.setAttribute('role', 'region');
+  panel.setAttribute('aria-labelledby', button.id);
+  button.insertAdjacentHTML('beforeend', '<svg class="disclosure-icon" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="m4 6 4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+  item.append(panel);
+  button.addEventListener('click', () => {
+    const open = panel.hidden;
+    panel.hidden = !open;
+    button.setAttribute('aria-expanded', String(open));
+    item.classList.toggle('is-abstract-open', open);
+  });
+});
 
 document.querySelectorAll('.abstract-toggle').forEach(button => {
   button.addEventListener('click', () => {
