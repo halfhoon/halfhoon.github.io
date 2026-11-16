@@ -157,3 +157,5 @@
 @media (max-width: 360px) {
  .unified-research .research-item { grid-template-columns: 84px minmax(0, 1fr); }
 }
+
+.photo-wall { width: 92%; margin-inline: auto; column-gap: 32px; }
