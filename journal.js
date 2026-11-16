@@ -119,13 +119,23 @@ galleryFilters.forEach(button => button.addEventListener('click', () => {
 const lightbox = document.querySelector('.lightbox');
 const image = document.querySelector('.lightbox-image');
 let photoIndex = 0;
+let photoRequest = 0;
+let originalPhoto;
 function visiblePhotos() { return cards.filter(card => !card.hidden).map(card => card.querySelector('.photo-link')); }
 function showPhoto(index) {
   const photos = visiblePhotos();
   photoIndex = (index + photos.length) % photos.length;
   const link = photos[photoIndex];
-  image.src = link.href;
-  image.alt = link.querySelector('img').alt;
+  const preview = link.querySelector('img');
+  const request = ++photoRequest;
+  if (originalPhoto) originalPhoto.removeAttribute('src');
+  image.src = preview.currentSrc || preview.src;
+  image.alt = preview.alt;
+  originalPhoto = new Image();
+  originalPhoto.src = link.href;
+  originalPhoto.decode().then(() => {
+    if (request === photoRequest && lightbox.open) image.src = link.href;
+  }).catch(() => {});
   document.querySelector('.lightbox-caption').textContent = link.closest('figure').querySelector('figcaption').textContent;
   document.querySelector('.lightbox-count').textContent = `${photoIndex + 1} / ${photos.length}`;
 }
@@ -138,6 +148,13 @@ document.querySelectorAll('.photo-link').forEach(link => link.addEventListener('
 }));
 document.querySelector('.lightbox-close').addEventListener('click', () => lightbox.close());
 document.querySelectorAll('[data-photo-step]').forEach(button => button.addEventListener('click', () => showPhoto(photoIndex + Number(button.dataset.photoStep))));
+lightbox.addEventListener('close', () => {
+  if (lightbox.open) return;
+  photoRequest++;
+  if (originalPhoto) originalPhoto.removeAttribute('src');
+  originalPhoto = null;
+  image.removeAttribute('src');
+});
 lightbox.addEventListener('keydown', event => {
   if (event.key === 'ArrowRight' || event.key === 'ArrowLeft') {
     event.preventDefault();
