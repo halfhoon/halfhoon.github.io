@@ -159,3 +159,17 @@
 }
 
 .photo-wall { width: 92%; margin-inline: auto; column-gap: 32px; }
+
+/* Conference and track form one label; publication status stays separate. */
+.venue-label, .unified-research .research-date .venue-label {
+ display: inline-flex; align-items: baseline; gap: 6px;
+ padding: 4px 8px; border: 1px solid #bdbdbd; border-radius: var(--radius-control);
+ background: var(--color-paper); color: var(--color-ink-2);
+ font-size: 13px; font-weight: 400; line-height: 1.35; white-space: nowrap;
+}
+.venue-label abbr { color: var(--color-ink); font-weight: 600; }
+.pub-venue { padding-top: 0; text-align: left; }
+.publication-status { margin-top: 6px; font-size: 11px; line-height: 1.5; }
+@media (min-width: 701px) {
+ .pub-row { grid-template-columns: minmax(0, 1fr) 120px; }
+}
