@@ -165,9 +165,9 @@
  display: inline-flex; align-items: baseline; gap: 6px;
  padding: 4px 8px; border: 1px solid #bdbdbd; border-radius: var(--radius-control);
  background: var(--color-paper); color: var(--color-ink-2);
- font-size: 13px; font-weight: 400; line-height: 1.35; white-space: nowrap;
+ font-size: 13px; font-weight: 600; line-height: 1.35; white-space: nowrap;
 }
-.venue-label abbr { color: var(--color-ink); font-weight: 600; }
+.venue-label abbr { color: var(--color-ink); }
 .pub-venue { padding-top: 0; text-align: left; }
 .publication-status { margin-top: 6px; font-size: 11px; line-height: 1.5; }
 @media (min-width: 701px) {
